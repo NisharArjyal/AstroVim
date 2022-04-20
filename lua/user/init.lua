@@ -68,9 +68,9 @@ local config = {
           end,
         },
         {
-          "Pocco81/DAPInstall.nvim",
+          "Pocco81/dap-buddy.nvim",
           config = function()
-            require("dap-install").setup {}
+            -- require("dap-buddy").setup()
           end,
         },
         {
