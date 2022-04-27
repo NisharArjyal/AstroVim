@@ -139,7 +139,9 @@ local config = {
       -- disable fzf native plugin as that fails to build for me
       plugins["nvim-telescope/telescope-fzf-native.nvim"] = nil
 
-      -- disable delayed loading of all default plugins:
+      -- Do not update tree-sitter plugins:
+      plugins["nvim-treesitter/nvim-treesitter"]["run"] = nil
+
       for _, plugin in pairs(plugins) do
         -- disable lazy loading
         -- plugin["cmd"] = nil
