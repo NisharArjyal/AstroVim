@@ -246,9 +246,6 @@ local config = {
         lualine_z = {},
       },
     },
-    luasnip = {
-      vscode_snippet_paths = { paths = "/home/extra/.config/nvim-data/snippets" },
-    },
     treesitter = {
       ensure_installed = {},
     },
@@ -259,7 +256,6 @@ local config = {
     bufferline = false,
     neo_tree = false,
     lualine = true,
-    lspsaga = true,
     gitsigns = true,
     colorizer = true,
     toggle_term = false,
@@ -312,6 +308,8 @@ local config = {
   end,
 
   polish = function()
+    require("luasnip.loaders.from_vscode").lazy_load({ paths = "/home/extra/.config/nvim-data/snippets", })
+
     local opts = { noremap = true, silent = true }
     local map = vim.api.nvim_set_keymap
     local unmap = vim.api.nvim_del_keymap
